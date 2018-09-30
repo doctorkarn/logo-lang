@@ -1,0 +1,83 @@
+TO rectangle :x :y
+  fd :x rt 90
+  fd :y rt 90
+  fd :x rt 90
+  fd :y rt 90
+END
+
+TO square :x
+  repeat 4 [ fd :x rt 90 ]
+END
+
+TO circle :x
+   repeat 360 [ fd  :x rt 1 ]
+END
+
+TO setpencolor_default
+  setpencolor "#9E9E9E
+END
+
+TO paint :color
+  pu rt 45 fd 10 pd
+  setpencolor :color fill
+  pu bk 10 lt 45 pd
+  setpencolor_default
+END
+
+TO body
+  rt 90
+  rectangle 200 100
+  paint "#388e3c
+  repeat 9 [ fd 20 rt 90 fd 75 bk 75 lt 90 ]
+  pu bk 180 pd
+  rt 90
+  pu fd 100 lt 90 fd 50 pd
+  circle 0.1
+  pu fd 100 pd
+  circle 0.1
+  lt 90
+END
+
+TO head
+  rt 90
+  fd 150
+  repeat 90 [ fd 0.9 rt 1 ]
+  fd 50 rt 90 
+  fd 200 rt 90 
+  fd 100 rt 90 
+  paint "#ffa000
+  
+  pu fd 20 rt 90 fd 20 lt 90 pd
+  square 30
+  paint "#00bcd4
+  pu fd 60 pd
+  square 30
+  paint "#00bcd4
+  pu fd 60 pd
+  square 30
+  paint "#00bcd4
+
+  pu bk 150 lt 90 fd 20 pd
+  rt 180
+  pu fd 100 lt 90 fd 50 pd
+  circle 0.1
+  pu fd 100 pd
+  circle 0.1
+  lt 90
+END
+
+TO train
+  setpencolor_default
+  
+  pu setxy -440 0 pd
+  body
+  pu setxy -220 0 pd
+  body
+  pu setxy 0 0 pd
+  body
+  pu setxy 220 0 pd
+  head
+END
+
+cs
+train
