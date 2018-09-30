@@ -1,0 +1,66 @@
+TO comment :message
+END
+
+TO setpencolor_default
+  setpencolor "#9E9E9E
+END
+
+TO paint :color
+  pu rt 45 fd 10 pd
+  setpencolor :color fill
+  pu bk 10 lt 45 pd
+  setpencolor_default
+END
+
+cs
+setpencolor_default
+pu setxy -200 -100 pd
+
+comment "body
+fd 75
+rt 30 fd 100 
+rt 60 fd 200
+rt 60 fd 100
+lt 60 fd 50
+rt 90 fd 75
+rt 90 fd 350
+rt 90
+paint "#d32f2f
+
+comment "wheel_1
+pu rt 90 fd 120 rt 90 pd
+repeat 360 [ fd 0.75 rt 1 ]
+paint "#212121
+rt 90 fd 15 lt 90
+repeat 360 [ fd 0.5 rt 1 ]
+paint "#9E9E9E
+rt 90 bk 15 lt 90
+
+comment "wheel_2
+pu lt 90 fd 180 rt 90 pd
+repeat 360 [ fd 0.75 rt 1 ]
+paint "#212121
+rt 90 fd 15 lt 90
+repeat 360 [ fd 0.5 rt 1 ]
+paint "#9E9E9E
+rt 90 bk 15 lt 90
+
+comment "window_1
+pu lt 90 bk 300 lt 90 pd
+pu fd 20 rt 90 fd 20 lt 90 pd
+pu fd 55 pd
+rt 30 fd 80
+rt 60 fd 80
+rt 90 fd 65
+rt 90 fd 120
+rt 120
+paint "#00bcd4
+
+comment "window_2
+pu rt 60 fd 140 lt 90 pd
+fd 65
+rt 90 fd 80
+rt 60 fd 75
+rt 120 fd 120
+rt 90
+paint "#00bcd4
