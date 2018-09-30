@@ -1,0 +1,95 @@
+TO comment :message
+END
+
+TO setpencolor_default
+  setpencolor "#424242
+END
+
+TO paint :color
+  pu rt 90 fd 5 pd
+  setpencolor :color fill
+  pu bk 5 lt 90 pd
+  setpencolor_default
+END
+
+To bow
+  rt 60 fd 75
+  rt 120 fd 75
+  rt 120 fd 150
+  lt 120 fd 75
+  lt 120 fd 75
+  lt 60
+  paint "#EC193A
+  rt 180 paint "#EC193A
+  pu rt 90 fd 40 pd paint "#EC193A
+  pu bk 40 lt 90 rt 180 pd
+END
+
+cs
+setpensize 3
+setpencolor_default
+
+comment "head_1
+repeat 30 [ fd 1 rt 1 ]
+repeat 15 [ fd 2 rt 1 ]
+lt 45 fd 100 rt 135 fd 90
+bk 90 lt 135 bk 100 rt 45
+pu 
+repeat 15 [ fd 2 rt 1 ] 
+repeat 15 [ fd 3 rt 1 ]
+pd
+repeat 15 [ fd 3 rt 1 ]
+
+comment "head_2
+repeat 15 [ fd 3 rt 1 ]
+lt 50 fd 100 rt 135 fd 90
+bk 90 lt 135 bk 100 rt 50
+pu fd 40 lt 70 pd
+bow
+pu rt 70 bk 40 pd
+pu 
+repeat 15 [ fd 3 rt 1 ] 
+repeat 15 [ fd 2 rt 1 ]
+pd
+repeat 15 [ fd 2 rt 1 ]
+repeat 30 [ fd 1 rt 1 ]
+
+comment "head_3
+repeat 30 [ fd 1 rt 1 ]
+repeat 30 [ fd 2 rt 1 ]
+repeat 30 [ fd 3 rt 1 ]
+repeat 30 [ fd 3 rt 1 ]
+repeat 30 [ fd 2 rt 1 ]
+repeat 30 [ fd 1 rt 1 ]
+
+comment "whiskers_1
+pu rt 90 fd 150 pd
+pu fd 100 pd
+fd 50 bk 50
+lt 30 fd 50 bk 50
+rt 60 fd 50 bk 50
+lt 30
+pu bk 100 pd
+pu bk 150 lt 90 pd
+
+comment "whiskers_2
+pu rt 90 fd 20 pd
+rt 180
+fd 50 bk 50
+lt 30 fd 50 bk 50
+rt 60 fd 50 bk 50
+lt 30
+rt 180
+pu bk 20 lt 90 pd
+
+comment "face
+pu rt 90 fd 125 pd
+lt 90
+repeat 360 [ fd 0.2 rt 1 ]
+paint "#FFD601
+pu fd 30 lt 90 fd 45 rt 90 pd
+repeat 360 [ fd 0.2 rt 1 ]
+paint "#424242
+pu rt 90 fd 90 lt 90 pd
+repeat 360 [ fd 0.2 rt 1 ]
+paint "#424242
